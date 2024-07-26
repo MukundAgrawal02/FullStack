@@ -16,8 +16,11 @@ const animalsSlice = createSlice({
     setError: (state, action) => {
       state.error = action.payload;
     },
+    deleteAnimals:(state, action)=>{
+      state.list= state.list.filter(list => list.name !== action.payload);
+    }
   },
 });
 
-export const { setAnimals, setError } = animalsSlice.actions;
+export const { setAnimals, setError, deleteAnimals } = animalsSlice.actions;
 export default animalsSlice.reducer;
