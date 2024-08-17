@@ -36,6 +36,11 @@ const animals = [{
     name: 'Dog',
     type: 'Mammal',
     habitat: 'Woodland'
+},
+{
+    name: 'Haris',
+    type: 'Human',
+    habitat: 'Manpura'
 }]
 
 app.get('/api/animals', (req, res) => {
