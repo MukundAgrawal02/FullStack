@@ -27,7 +27,7 @@ function App() {
       <Navbar />
       <h1 className="text-5xl text-center py-4">Animals List</h1>
       <div className="h-screen flex flex-wrap justify-center items-center">
-        {error ? (
+        {error || apiError ? (
           <div className="text-center size-full">
             <img className='size-96' src={errorimg} alt="Error loading animals" />
             <p>Error loading animals. Please try again later.</p>
