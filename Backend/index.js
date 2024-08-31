@@ -1,50 +1,14 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import fs from 'fs';
 dotenv.config();
 const app = express()
 app.use(cors())
 const port= process.env.PORT || 3000;
-const animals = [{
-    name: 'Lion',
-    type: 'Mammal',
-    habitat: 'Savannah'
-},{
-    name: 'Elephant',
-    type: 'Mammal',
-    habitat: 'Africa'
-},{
-    name: 'Tiger',
-    type: 'Mammal',
-    habitat: 'Africa'
-},{
-    name: 'Giraffe',
-    type: 'Mammal',
-    habitat: 'Africa'
-},
-{
-    name: 'Cow',
-    type: 'Mammal',
-    habitat: 'Grassland'
-},
-{
-    name: 'Horse',
-    type: 'Mammal',
-    habitat: 'Grassland'
-},
-{
-    name: 'Dog',
-    type: 'Mammal',
-    habitat: 'Woodland'
-},
-{
-    name: 'Haris',
-    type: 'Human',
-    habitat: 'Manpura'
-}]
 
 app.get('/api/animals', (req, res) => {
-    res.send(animals);
+    res.send(fs.readFileSync('./MOCK_DATA.json', 'UTF-8'));
 });
  app.listen(port, ()=>{
     console.log(`Server is running on http://localhost:${port}`)

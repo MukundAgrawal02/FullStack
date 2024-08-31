@@ -11,7 +11,7 @@ function Navbar() {
 
   return (
     //main navbar component
-    <nav className="bg-blue-500 p-4">
+    <nav className="bg-gray-950 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white text-lg font-bold">MyCards</div>
         <div className="hidden md:flex space-x-4 mr-7">
