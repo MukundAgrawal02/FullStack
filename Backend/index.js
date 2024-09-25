@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // Define a Mongoose schema and model for the "animals" collection
 const animalSchema = new mongoose.Schema({}, { collection: 'animals' }); // Empty schema to match existing collection structure
-const Animal = mongoose.model('Animal', animalSchema);
+const Animal = mongoose.model('animals', animalSchema);
 
 // API route to get all animals
 app.get('/api/animals', async (req, res) => {
